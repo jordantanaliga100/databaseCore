@@ -22,14 +22,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
-  mongo:
-    image: mongo
-    container_name: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-
+  ## SQL GUI
   adminer:
     image: adminer
     container_name: adminer
@@ -39,6 +32,18 @@ services:
       - postgres
       - mysql
 
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - mongo_data:/data/db
+
+  ## MONGODB GUI
   mongo-express:
     image: mongo-express
     container_name: mongo-express
@@ -46,6 +51,8 @@ services:
       - "8081:8081"
     environment:
       ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_AUTH_USERNAME: admin
+      ME_CONFIG_MONGODB_AUTH_PASSWORD: admin
     depends_on:
       - mongo
 
