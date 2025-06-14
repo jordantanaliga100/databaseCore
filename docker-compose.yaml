@@ -56,7 +56,20 @@ services:
     depends_on:
       - mongo
 
+  ## CouchDB
+  couchdb:
+    image: couchdb:3
+    container_name: couchdb
+    ports:
+      - "5984:5984"
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: admin
+    volumes:
+      - couchdb_data:/opt/couchdb/data
+
 volumes:
   pg_data:
   mysql_data:
   mongo_data:
+  couchdb_data:
