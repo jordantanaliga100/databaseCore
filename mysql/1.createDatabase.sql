@@ -1,0 +1,4 @@
+--  support IF NOT EXIST
+CREATE DATABASE IF NOT EXISTS talently; 
+
+
