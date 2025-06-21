@@ -10,7 +10,7 @@
       "port": 3306,
       "driver": "MySQL",
       "name": "mysql-docker",
-      "database": "online_shop",
+      "database": "sales_example",
       "username": "root",
       "askForPassword": true
     },
@@ -21,7 +21,7 @@
       "askForPassword": true,
       "driver": "PostgreSQL",
       "name": "postgres-docker",
-      "database": "online_shop",
+      "database": "sales_example",
       "username": "admin"
     }
   ]
