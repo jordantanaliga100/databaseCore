@@ -1,0 +1,3 @@
+-- ! dropping tables
+-- DROP TABLE conversations;
+-- DROP TABLE employers;
