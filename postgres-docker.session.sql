@@ -4,6 +4,22 @@
 -- SELECT * FROM employers;
 -- SELECT AVG(yearly_salary) FROM users;
 
+-- ! primary keys 
+-- DROP TABLE users;
+-- DROP TABLE employers;
+-- DROP TABLE conversations;
+
+-- CREATE TYPE employment_status as ENUM('self-employed', 'employed', 'unemployed')
+
+-- CREATE TABLE users (
+--   id SERIAL PRIMARY KEY 
+--   full_name VARCHAR(300) NOT NULL,
+--   yearly_salary INT CHECK (yearly_salary > 0),
+--   current_status employment_status 
+-- )
+
+
+
 -- ! updating the tables and columns
 -- * first the name of the table and then modified the column
 -- ALTER TABLE employers

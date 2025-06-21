@@ -2,6 +2,14 @@
 -- * first the name of the table and then modified the column
 -- ALTER TABLE employers 
 -- MODIFY COLUMN yearly_revenue FLOAT(5,2); -- mysql
-
 -- ALTER TABLE users
--- MODIFY COLUMN full_name VARCHAR(300);
+-- MODIFY COLUMN full_name VARCHAR(300); --mysql
+-- ALTER TABLE users 
+-- MODIFY COLUMN full_name VARCHAR(300 ) NOT NULL,
+-- MODIFY COLUMN current_status ENUM('employed', 'unemployed', 'self-employed') NOT NULL; -- mysql
+
+-- UPDATE users 
+-- SET yearly_salary = NULL
+-- WHERE full_name = 'Kyla Montas';
+-- ALTER TABLE users
+-- ADD CONSTRAINT yearly_salary_positive CHECK (yearly_salary > 0)

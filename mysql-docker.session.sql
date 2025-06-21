@@ -1,8 +1,27 @@
 
+-- ! SELECT VERSION 
+SELECT version();
+
 -- ! selecting all records
 -- SELECT * FROM users;
 -- SELECT * FROM employers;
 -- SELECT AVG(yearly_salary) FROM users;
+
+
+-- ! primary keys 
+-- DROP TABLE users;
+-- DROP TABLE employers;
+-- DROP TABLE conversations;
+
+
+-- CREATE TABLE users (
+--   id INT PRIMARY KEY AUTO_INCREMENT,
+--   full_name VARCHAR(300) NOT NULL,
+--   yearly_salary INT CHECK (yearly_salary > 0),
+--   current_status ENUM('self-employed', 'employed', 'unemployed')
+-- )
+
+
 
 
 -- ! updating the tables and columns
@@ -93,3 +112,4 @@
 
 -- ! creating database 
 -- CREATE DATABASE IF NOT EXISTS talently; 
+

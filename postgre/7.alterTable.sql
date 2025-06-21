@@ -2,6 +2,14 @@
 -- * first the name of the table and then modified the column
 -- ALTER TABLE employers
 -- ALTER COLUMN yearly_revenue SET DATA TYPE FLOAT; -- postgresql
-
 -- ALTER TABLE users
--- ALTER COLUMN full_name SET DATA TYPE VARCHAR(300)
+-- ALTER COLUMN full_name SET DATA TYPE VARCHAR(300) -- postgresql
+-- ALTER TABLE users 
+-- ALTER COLUMN full_name SET NOT NULL,
+-- ALTER COLUMN current_status SET NOT NULL; -- postgresql
+
+-- UPDATE users 
+-- SET yearly_salary = NULL
+-- WHERE full_name = 'Iza Tanaliga';
+-- ALTER TABLE users
+-- ADD CONSTRAINT yearly_salary_positive CHECK (yearly_salary > 0)
