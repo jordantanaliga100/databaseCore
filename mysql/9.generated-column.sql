@@ -1,7 +1,8 @@
--- ! primary keys 
-DROP TABLE users;
-DROP TABLE employers;
-DROP TABLE conversations;
+-- -- ! generated columns 
+DROP TABLE IF EXISTS conversations;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS employers;
+DROP TYPE IF EXISTS employment_status;
 
 
 CREATE TABLE users (
@@ -28,4 +29,12 @@ CREATE TABLE `conversations` (
   message TEXT NOT NULL
 );
 
+
+INSERT INTO users (first_name, last_name, yearly_salary,current_status)
+VALUES(
+  'Jordan',
+  'Tanaliga',
+  12000,
+  'employed'
+)
 
