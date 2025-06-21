@@ -1,0 +1,20 @@
+
+-- ! inserting data to the table employers
+-- * with default clauses
+-- INSERT INTO employers (company_name, company_address, yearly_revenue, is_hiring)  VALUES (
+--   'Learning Inc',
+--     'Education St. London',
+--     0.87, 
+--     TRUE
+-- );
+-- INSERT INTO employers (company_name, company_address, yearly_revenue)  VALUES (
+--   'Big Oil Inc',
+--     'Slippery St. Manila',
+--     112.55
+-- );
+-- INSERT INTO employers (company_name, company_address, yearly_revenue, is_hiring)  VALUES (
+--   'Hipster Inc',
+--     'Avocado St. Berlin',
+--     5.12, 
+--     TRUE
+-- );

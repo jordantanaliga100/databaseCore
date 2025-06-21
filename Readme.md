@@ -24,11 +24,11 @@ This project sets up the following containers:
 ```bash
 
 ### quick run
-docker compose up -d
-docker compose down -v
+docker-compose up -d
+docker-compose down -v
   OR
 ### for conventions
-docker compose -p db-dev up -d
-docker compose -p db-dev down -v
+docker-compose -p db-dev up -d
+docker-compose -p db-dev down -v
 
 ```
