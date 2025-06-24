@@ -299,8 +299,6 @@
 
 
 
-
-
 -- ! selecting all records
 -- SELECT * FROM users;
 -- SELECT * FROM employers;
