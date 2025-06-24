@@ -207,30 +207,53 @@
 -- ! BASIC FILTERING ! 
 -- * using the WHERE clause
 -- * check for equalitty 
-SELECT * FROM sales
-  WHERE volume > 1000; -- all values that is greater than 1000 
-SELECT * FROM sales WHERE is_recurring IS TRUE;  -- all truethy values
-SELECT * FROM sales  WHERE is_recurring = 't'; -- all truthy values (postgres and mysql)
+-- SELECT * FROM sales
+  -- WHERE volume > 1000; -- all values that is greater than 1000 
+-- SELECT * FROM sales WHERE is_recurring IS TRUE;  -- all truethy values
+-- SELECT * FROM sales  WHERE is_recurring = 't'; -- all truthy values (postgres and mysql)
 
 -- * check for inequalitty
-SELECT * FROM sales  WHERE is_recurring = 0; -- all falsy values (mysql only)
+-- SELECT * FROM sales  WHERE is_recurring = 0; -- all falsy values (mysql only)
 
 -- * check for range (between) eg. DATES
-SELECT * FROM sales WHERE date_created > '2021-11-01' AND date_created < '2022-05-01';
-SELECT * FROM sales WHERE date_created BETWEEN '2021-11-01' AND '2022-05-01';
+-- SELECT * FROM sales WHERE date_created > '2021-11-01' AND date_created < '2022-05-01';
+-- SELECT * FROM sales WHERE date_created BETWEEN '2021-11-01' AND '2022-05-01';
 
 -- * check for multiple conditions (combinations)
-SELECT * FROM sales WHERE (is_disputed IS TRUE) AND (volume > 1000)  AND (id <= 10);
+-- SELECT * FROM sales WHERE (is_disputed IS TRUE) AND (volume > 1000)  AND (id <= 10);
 
 -- ! ADVANCE FILTERING !
 -- * WORKING WITH TEXT 
-SELECT * FROM sales WHERE customer_name = 'Jordan Tanaliga';
-SELECT * FROM sales WHERE customer_name > 'Company A'; -- not optimal 
+-- SELECT * FROM sales WHERE customer_name = 'Jordan Tanaliga';
+-- SELECT * FROM sales WHERE customer_name > 'Company A'; -- not optimal 
 
 -- * WORKING WITH DATES AND DATE DIFFERENCES 
-SELECT * , date_fulfilled - date_created AS working_days FROM sales;
+-- SELECT * , date_fulfilled - date_created AS working_days FROM sales;
+-- SELECT * FROM sales WHERE date_fulfilled - date_created <= 5;
 
+-- * ORDERING AND LIMITIG 
+-- * SELECT + WHERE + ORDER BY + LIMIT
+-- SELECT * FROM sales ORDER BY volume DESC; --the default is asc
+-- SELECT * FROM sales ORDER BY volume DESC  LIMIT 10;
+-- SELECT * FROM sales WHERE is_disputed IS FALSE ORDER BY volume DESC  LIMIT 10;
+-- SELECT *,date_fulfilled - date_created AS WORKING_DAYS  FROM sales WHERE date_fulfilled - date_created <= 300  ORDER BY volume DESC  LIMIT 10;
 
+-- * can have multiple "order by" but the first one always matters (IF THERE ARE THE SAME VALUES IT WILL GO TO THE NEXT "order by") 
+-- SELECT * FROM sales WHERE is_disputed IS FALSE ORDER BY volume DESC, customer_name  LIMIT 10;
+
+-- * can also use offset (means skipping the result depending on the value that is set)
+-- SELECT * FROM sales ORDER BY volume DESC  LIMIT 5 OFFSET 3;
+
+-- * GETTING A DISTINCT VALUES 
+-- SELECT DISTINCT customer_name FROM sales; --the result set is the company name-- no duplicates
+-- SELECT DISTINCT customer_name FROM sales ORDER BY customer_name;
+
+-- * CAN ALSO CONTAINS SUB-QUERIES 
+-- * Every derived table must have its own alias
+-- SELECT customer_name, product_name FROM (SELECT * FROM sales WHERE volume > 1000) AS base_result;
+
+-- * USING "CREATE VIEW" for reusability ((act like as a snippets))
+-- CREATE VIEW AS high_value_sales AS SELECT * FROM sales WHERE volume > 1000;
 
 
 -- ! EXERCISE !!!
