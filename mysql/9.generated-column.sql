@@ -14,6 +14,7 @@ CREATE TABLE users (
   current_status ENUM('self-employed', 'employed', 'unemployed')
 );
 
+
 CREATE TABLE employers (
   id INT PRIMARY KEY AUTO_INCREMENT,
   company_name VARCHAR(300) NOT NULL,

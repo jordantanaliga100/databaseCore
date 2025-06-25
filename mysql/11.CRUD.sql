@@ -249,3 +249,4 @@
 
 -- * USING "CREATE VIEW" for reusability ((act like as a snippets))
 -- CREATE VIEW AS high_value_sales AS SELECT * FROM sales WHERE volume > 1000;
+
