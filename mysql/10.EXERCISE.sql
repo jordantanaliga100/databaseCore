@@ -37,5 +37,5 @@
 
 
 -- ! Task 6: Add id as primary key --mysql
-ALTER TABLE products
-  ADD COLUMN id INT PRIMARY KEY AUTO_INCREMENT;
+-- ALTER TABLE products
+--   ADD COLUMN id INT PRIMARY KEY AUTO_INCREMENT;

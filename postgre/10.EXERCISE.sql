@@ -41,5 +41,5 @@
 
 
 -- ! Task 6: Add id as primary key --mysql
-ALTER TABLE products
-  ADD COLUMN id SERIAL PRIMARY KEY;
+-- ALTER TABLE products
+--   ADD COLUMN id SERIAL PRIMARY KEY;
