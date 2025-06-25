@@ -10,6 +10,6 @@
 
 -- UPDATE users 
 -- SET yearly_salary = NULL
--- WHERE full_name = 'Kyla Montas';
+-- WHERE full_name = 'Johnny Buckland';
 -- ALTER TABLE users
 -- ADD CONSTRAINT yearly_salary_positive CHECK (yearly_salary > 0)
