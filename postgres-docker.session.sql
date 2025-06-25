@@ -47,6 +47,28 @@
 
 
 -- * querying data (inner-join)
+-- SELECT u.id as user_id, first_name, last_name, email, street, house_number , c.name AS city_name FROM users AS u
+-- INNER JOIN addresses AS a ON u.address_id = a.id
+-- INNER JOIN cities AS c ON a.city_id = c.id;
+
+-- * can also do filtering in JOINS
+-- SELECT u.id as user_id, first_name, last_name, email, street, house_number , c.name AS city_name FROM users AS u
+-- INNER JOIN addresses AS a ON u.address_id = a.id
+-- INNER JOIN cities AS c ON a.city_id = c.id
+-- WHERE c.id = 1 OR c.id = 2 ORDER BY user_id DESC;
+
+-- * using LEFT JOIN 
+-- SELECT * FROM addresses AS a
+-- LEFT JOIN users AS u ON a.id = u.address_id
+-- LEFT JOIN cities AS c ON c.id = a.city_id
+-- ;
+
+-- * MORE EXAMPLES (data inserted)
+-- SELECT CONCAT(first_name,' ',last_name) AS full_name , name AS city_name, a.street , a.house_number FROM cities AS c
+-- LEFT JOIN addresses AS a ON a.city_id = c.id
+-- LEFT JOIN users AS u ON u.address_id = a.id
+-- ;
+
 
 
 
