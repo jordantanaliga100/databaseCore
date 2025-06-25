@@ -333,7 +333,7 @@
 
 -- UPDATE users 
 -- SET yearly_salary = NULL
--- WHERE full_name = 'Kyla Montas';
+-- WHERE full_name = 'Johnny Buckland';
 -- ALTER TABLE users
 -- ADD CONSTRAINT yearly_salary_positive CHECK (yearly_salary > 0)
 
@@ -341,7 +341,7 @@
 -- ! inserting data to the table conversations
 -- INSERT INTO conversations (user_name, employer_name, message)
 -- VALUES(
---   'Kimmy Aguilar',
+--   'Chris Martin',
 --   'Learning Inc',
 --   'Hi, I like learning'
 -- );
@@ -393,7 +393,7 @@
 
 -- ! inserting data to the table user
 -- INSERT INTO users (full_name, yearly_salary, current_status)  VALUES (
---   'Kimmy Aguilar',
+--   'Chris Martin',
 --     1000,
 --     'self-employed'
 -- );
