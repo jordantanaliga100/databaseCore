@@ -24,5 +24,6 @@
       "database": "relations",
       "username": "admin"
     }
-  ]
+  ],
+  "mdb.useDefaultTemplateForPlayground": false
 }

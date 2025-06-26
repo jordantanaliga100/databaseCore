@@ -1,0 +1,17 @@
+// ! USING VSCODE (.mongodb) extension
+// db.getMongo().getDBs();               // ✅ list of all databases
+// use("db_name");                       // ✅ switch to a database (only works if extension allows it)
+// db;                                   // ✅ show current database
+// db.getCollectionNames();              // ✅ list of all collections
+// db.collectionName.insertOne({})       // ✅ create collection (implicit on insert)
+// db.collectionName.find();             // ✅ show all documents in collection
+// db.collectionName.drop();             // ✅ drop/delete collection
+
+// ! USING THE SHELL (mongosh)
+// show dbs;                             // ✅ list of all databases
+// use db_name;                          // ✅ switch to a database (no quotes needed)
+// db;                                   // ✅ show current database
+// show collections;                     // ✅ list of all collections
+// db.collectionName.insertOne({})       // ✅ create collection (implicit on insert)
+// db.collectionName.find();             // ✅ show all documents in collection
+// db.collectionName.drop();             // ✅ drop/delete collection
