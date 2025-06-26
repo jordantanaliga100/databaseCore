@@ -248,4 +248,5 @@
 -- SELECT customer_name, product_name FROM (SELECT * FROM sales WHERE volume > 1000) AS base_result;
 
 -- * USING "CREATE VIEW" for reusability ((act like as a snippets))
--- CREATE VIEW AS high_value_sales AS SELECT * FROM sales WHERE volume > 1000;
+-- CREATE VIEW  high_value_sales AS SELECT * FROM sales WHERE volume > 1000;
+-- SELECT * FROM sales(high_value_sales);
