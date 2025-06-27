@@ -1,6 +1,16 @@
 {
   "sqltools.connections": [
     {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "postgres-docker",
+      "database": "relations",
+      "username": "admin"
+    },
+    {
       "mysqlOptions": {
         "authProtocol": "default",
         "enableSsl": "Disabled"
@@ -13,16 +23,6 @@
       "database": "relations",
       "username": "root",
       "askForPassword": true
-    },
-    {
-      "previewLimit": 50,
-      "server": "localhost",
-      "port": 5432,
-      "askForPassword": true,
-      "driver": "PostgreSQL",
-      "name": "postgres-docker",
-      "database": "relations",
-      "username": "admin"
     }
   ],
   "mdb.useDefaultTemplateForPlayground": false

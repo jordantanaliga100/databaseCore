@@ -10,5 +10,3 @@
 -- SHOW DATABASES;
 
 
-
-
