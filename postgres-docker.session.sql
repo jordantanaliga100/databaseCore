@@ -72,8 +72,7 @@ GROUP BY booking_date, payment_methods.name
 SELECT *
 FROM payment_methods AS p 
   INNER JOIN bookings AS b ON p.id = b.payment_id
-  INNER JOIN tables AS t ON b.table_id = t.id
-  ;
+  INNER JOIN tables AS t ON b.table_id = t.id;
 
 SELECT 
     b.booking_date,
@@ -87,3 +86,24 @@ INNER JOIN tables AS t ON b.table_id = t.id
 GROUP BY b.booking_date, p.name, t.category
 ORDER BY booking_date;
 
+--* WHERE
+SELECT booking_date, COUNT(booking_date)
+  FROM bookings 
+    WHERE amount_billed > 30 
+      GROUP BY booking_date;
+
+-- * HAVING 
+SELECT 
+    b.booking_date,
+    p.name AS payment_method,
+    t.category AS table_size,
+    t.num_seats AS num_of_seats,
+    COUNT(*) AS total_bookings,
+    COALESCE(ROUND(AVG(amount_tipped), 2),0) AS tipped
+FROM payment_methods AS p
+INNER JOIN bookings AS b ON p.id = b.payment_id
+INNER JOIN tables AS t ON b.table_id = t.id
+GROUP BY b.booking_date, p.name, t.category,   t.num_seats,  b.amount_tipped
+HAVING t.num_seats = 8 AND b.amount_tipped < 5
+ORDER BY booking_date;
+ 
