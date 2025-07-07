@@ -1,16 +1,6 @@
 {
   "sqltools.connections": [
     {
-      "previewLimit": 50,
-      "server": "localhost",
-      "port": 5432,
-      "askForPassword": true,
-      "driver": "PostgreSQL",
-      "name": "postgres-docker",
-      "database": "relations",
-      "username": "admin"
-    },
-    {
       "mysqlOptions": {
         "authProtocol": "default",
         "enableSsl": "Disabled"
@@ -20,9 +10,19 @@
       "port": 3306,
       "driver": "MySQL",
       "name": "mysql-docker",
-      "database": "relations",
+      "database": "restaurants",
       "username": "root",
       "askForPassword": true
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "postgres-docker",
+      "database": "restaurants",
+      "username": "admin"
     }
   ],
   "mdb.useDefaultTemplateForPlayground": false
