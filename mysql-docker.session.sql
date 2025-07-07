@@ -104,3 +104,43 @@ INNER JOIN tables AS t ON b.table_id = t.id
 GROUP BY b.booking_date, p.name, t.category,   t.num_seats,  b.amount_tipped
 HAVING t.num_seats = 8 AND b.amount_tipped < 5
 ORDER BY booking_date;
+
+
+-- * NESTED SUB QUERIES 
+
+SELECT booking_date, SUM(amount_billed) as TOTAL_AMOUNT_BILLED 
+  FROM bookings
+  GROUP BY booking_date
+
+SELECT MIN(daily_sum)
+FROM
+(
+    SELECT booking_date, SUM(amount_billed) AS daily_sum
+    FROM bookings
+    GROUP BY booking_date
+) AS daily_table
+
+
+SELECT MIN(TOTAL_AMOUNT_BILLED) AS min_billed, 
+       MAX(TOTAL_AMOUNT_BILLED) AS max_billed
+FROM
+(
+    SELECT booking_date, SUM(amount_billed) as TOTAL_AMOUNT_BILLED 
+    FROM bookings
+    GROUP BY booking_date
+);
+
+
+SELECT booking_date 
+FROM bookings 
+GROUP BY booking_date 
+HAVING SUM(amount_billed) =  (
+
+      SELECT MIN(daily_sum)
+    FROM
+    (
+        SELECT booking_date, SUM(amount_billed) AS daily_sum
+        FROM bookings
+        GROUP BY booking_date
+    ) AS daily_table
+)
