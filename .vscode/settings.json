@@ -1,6 +1,19 @@
 {
   "sqltools.connections": [
     {
+<<<<<<< Updated upstream
+=======
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "postgres-docker",
+      "database": "restaurants",
+      "username": "admin"
+    },
+    {
+>>>>>>> Stashed changes
       "mysqlOptions": {
         "authProtocol": "default",
         "enableSsl": "Disabled"

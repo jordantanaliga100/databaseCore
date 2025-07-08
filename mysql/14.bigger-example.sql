@@ -2,10 +2,18 @@
 -- !  A BIGGER EXAMPLE
 
 -- TODO: create tables and links them 
+
+CREATE TABLE projects(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(300) NOT NULL,
+  deadline DATE
+);
+
 CREATE TABLE company_buildings(
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(300) NOT NULL
 );
+
 CREATE TABLE teams(
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(300) NOT NULL,
@@ -38,7 +46,7 @@ CREATE TABLE projects_employees (
     FOREIGN KEY (employee_id) REFERENCES employees(id) ON DELETE CASCADE,
   project_id INT,
     FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
-)
+);
 
 
 -- TODO: insert data to employees table
@@ -136,4 +144,5 @@ WHERE id = 1;
 
 -- ! DELETING ROWS AND START THE ID TO 1 
 TRUNCATE intranet_accounts, employees, teams, company_buildings RESTART IDENTITY CASCADE;
+
 
