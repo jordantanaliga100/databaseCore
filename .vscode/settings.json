@@ -1,19 +1,16 @@
 {
   "sqltools.connections": [
     {
-<<<<<<< Updated upstream
-=======
       "previewLimit": 50,
       "server": "localhost",
       "port": 5432,
       "askForPassword": true,
       "driver": "PostgreSQL",
       "name": "postgres-docker",
-      "database": "restaurants",
+      "database": "gym",
       "username": "admin"
     },
     {
->>>>>>> Stashed changes
       "mysqlOptions": {
         "authProtocol": "default",
         "enableSsl": "Disabled"
@@ -23,19 +20,9 @@
       "port": 3306,
       "driver": "MySQL",
       "name": "mysql-docker",
-      "database": "restaurants",
+      "database": "gym",
       "username": "root",
       "askForPassword": true
-    },
-    {
-      "previewLimit": 50,
-      "server": "localhost",
-      "port": 5432,
-      "askForPassword": true,
-      "driver": "PostgreSQL",
-      "name": "postgres-docker",
-      "database": "restaurants",
-      "username": "admin"
     }
   ],
   "mdb.useDefaultTemplateForPlayground": false
